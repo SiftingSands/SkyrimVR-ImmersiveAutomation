@@ -121,7 +121,8 @@ namespace ImmersiveWinds {
 					
 					TPLinkHelper tpLinkConn(_logsEnabled);
 					if (tpLinkConn.LoadIPConfigFromFile(useUDP, workingIp)) {
-						tpLinkConn.SwitchRelayState(1);
+						//tpLinkConn.SwitchRelayState(1);
+						tpLinkConn.SwitchDimmerState(100);
 					}
 				}
 				_levelValues[_currentSwitchState].counterLeaveCurrentState++;
@@ -142,7 +143,8 @@ namespace ImmersiveWinds {
 					//std::cout << "Mode" << currentSwitchState << ": Swap off\n";
 					TPLinkHelper tpLinkConn(_logsEnabled);
 					if (tpLinkConn.LoadIPConfigFromFile(useUDP, workingIp)) {
-						tpLinkConn.SwitchRelayState(0);
+						//tpLinkConn.SwitchRelayState(0);
+						tpLinkConn.SwitchDimmerState(50);
 					}
 				}
 				_levelValues[_currentSwitchState].counterLeaveCurrentState++;

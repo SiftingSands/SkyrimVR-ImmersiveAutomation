@@ -33,6 +33,8 @@ public:
 
 	void SwitchRelayState(long on);
 
+	void SwitchDimmerState(long dimmer);
+
 	void SwitchLEDState(long on);
 
 	DeviceInfo GetSystemInfo();

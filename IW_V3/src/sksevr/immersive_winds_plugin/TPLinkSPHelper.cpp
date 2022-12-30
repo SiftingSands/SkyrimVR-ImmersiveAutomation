@@ -435,6 +435,17 @@ void TPLinkHelper::SwitchRelayState(long on)
 	}
 }
 
+void TPLinkHelper::SwitchDimmerState(long brightness)
+{
+	_MESSAGE("DimmerState called");
+	std::string result = "";
+	std::string msg = "{\"smartlife.iot.dimmer\":{\"set_brightness\":{\"brightness\":" + std::to_string(brightness) + "}}}";
+	_MESSAGE(msg.c_str());
+	SendAndReceiveEncoded(msg, result);
+	_MESSAGE(result.c_str());
+}
+
+// this never gets used?
 void TPLinkHelper::SwitchLEDState(long on)
 {
 	std::string result = "";
